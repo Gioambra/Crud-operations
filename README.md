@@ -14,6 +14,8 @@ react-dom.development.js:14906 Uncaught Error: Invalid hook call. Hooks can only
 2. You might be breaking the Rules of Hooks
 3. You might have more than one copy of React in the same app
 
+the problem probably is reguarding Event.handler : https://it.reactjs.org/warnings/invalid-hook-call-warning.html.. TODO FIX
+
 steps TODO:
 
 1. CRUD app (save as object not yet in database) example : https://github.com/taniarascia/react-hooks
