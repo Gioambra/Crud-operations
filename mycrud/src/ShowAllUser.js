@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+
+// TODO check if credentials exists in the database! fix error on hooks!
 export default function ShowAllUSer() {
 	// Here we call API
 	useEffect(() => {

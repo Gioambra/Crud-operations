@@ -20,10 +20,6 @@ app.use(express.json());
 
 // CORS implemented so that we don't get errors when trying to access the server from a different server location
 app.use(cors());
-
-// TODO create CRUD operations
-// example of crud operations:
-
 // GET: Fetch all users from the database
 app.get('/', (req, res) => {
 	db.select('*')
@@ -36,9 +32,6 @@ app.get('/', (req, res) => {
 			console.log(err);
 		});
 });
-
-
-
 
 const port = process.env.PORT || 5000;
 
