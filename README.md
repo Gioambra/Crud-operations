@@ -7,6 +7,14 @@ Trouble/problem:
 - i tried to use sequelize but, always an error "install pg manually"
 - try sequelize with mysql but same problem "install mysql2 manually"
 So now i restarted the project.
+- When i try to pass username and password directly from onClick functionthis happen: 
+TODO: find another solution
+react-dom.development.js:14906 Uncaught Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+
+the problem probably is reguarding Event.handler : https://it.reactjs.org/warnings/invalid-hook-call-warning.html.. TODO FIX
 
 steps TODO:
 
@@ -32,3 +40,22 @@ Aready DONE?
 now there is a backend, you can test it with npm start in backend folder
 and npm start in frontend folder.
 important! if you want that the application works you have to create a database and add credentials in .env file
+
+
+
+Step to emulate my database emulate my database:
+
+1. create a database with postgress
+2. create a table with these comand :
+
+SQL -> creation Database :
+
+CREATE TABLE utenti (id  integer PRIMARY KEY, username VARCHAR(20), pssowrd VARCHAR(15));
+
+3. populate the database with these script:
+
+INSERT INTO utenti(id, username, password)
+	VALUES (13, 'username', 'mypassword!');
+  
+4. now you can connect and read data from utenti database
+
