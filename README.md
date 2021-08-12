@@ -18,3 +18,8 @@ Project/link for ideas and tutorial:
 - https://www.taniarascia.com/crud-app-in-react-with-hooks/
 - https://www.bezkoder.com/react-node-express-postgresql/
 - https://blog.logrocket.com/getting-started-with-postgres-in-your-react-app/
+
+
+Aready DONE?
+
+- Passing userName and password to check component
