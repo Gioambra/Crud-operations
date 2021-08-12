@@ -40,3 +40,22 @@ Aready DONE?
 now there is a backend, you can test it with npm start in backend folder
 and npm start in frontend folder.
 important! if you want that the application works you have to create a database and add credentials in .env file
+
+
+
+Step to emulate my database emulate my database:
+
+1. create a database with postgress
+2. create a table with these comand :
+
+SQL -> creation Database :
+
+CREATE TABLE utenti (id  integer PRIMARY KEY, username VARCHAR(20), pssowrd VARCHAR(15));
+
+3. populate the database with these script:
+
+INSERT INTO utenti(id, username, password)
+	VALUES (13, 'username', 'mypassword!');
+  
+4. now you can connect and read data from utenti database
+
