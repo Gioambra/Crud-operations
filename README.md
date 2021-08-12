@@ -25,3 +25,10 @@ Aready DONE?
 
 - Passing userName and password to check component
 - Creation of the Backend
+
+
+#UPDATE 12/08
+
+now there is a backend, you can test it with npm start in backend folder
+and npm start in frontend folder.
+important! if you want that the application works you have to create a database and add credentials in .env file
