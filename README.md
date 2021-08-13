@@ -11,9 +11,6 @@
 - delete an account 
 
 
-# NEWS AND UPDATRE
-
-
 # UPDATE 12/08
 
 now there is a backend, you can test it with npm start in backend folder
