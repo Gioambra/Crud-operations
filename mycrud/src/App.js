@@ -5,11 +5,19 @@ import { Flex, FormLabel, FormControl, Input, Button } from "@chakra-ui/react"
 //import ShowAllUser from "./ShowAllUser"
 import ShowAllUserv2 from "./ShowAllUserv2"
 import React, { useEffect, useState } from "react"
-/*
-  Create 2 varibales passowrd and username, on click on button Submit these variables will be send
-  to Check component
-*/
+import { Switch, Route, useHistory } from 'react-router-dom'
+import Home from "./HomePage"
+
+// Routing of the application
 function App() {
+  return (
+    <Switch>
+      <Route exact path="/Home" component={Home} />
+      <Route path="/Login" component={Login} />
+    </Switch>)
+}
+
+function Login() {
 
   // Here we call API
   useEffect(() => {
@@ -30,9 +38,9 @@ function App() {
   console.log("APIDATA->", apiData)
 
 
-
   var password
   var userName
+  let history = useHistory();
   return (
 
     <Flex direction="column" >
@@ -44,11 +52,16 @@ function App() {
         <FormLabel>password</FormLabel>
         <Input type="password" id="psw" onChange={(event) => password = event.target.value} />
       </FormControl>
-      <Button onClick={() => ShowAllUserv2(userName, password, apiData)}>Submit</Button>
-
-
+      <Button onClick={() => handleClick(history, userName, password, apiData)}>Submit</Button>
     </Flex>
   );
+}
+
+// if the login is correct, redirect to HomePage otherwise stay in Login Page
+function handleClick(history, userName, password, apiData) {
+
+  // history can redirect or to "/Homepage" or stay in Login page
+  history.push(ShowAllUserv2(userName, password, apiData));
 }
 
 export default App;
