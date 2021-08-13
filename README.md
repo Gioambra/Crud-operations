@@ -1,10 +1,58 @@
 # Crud-operations
 
-Make crud operation, and at the end connect to a database.
+# ROADMAP
 
-Trouble/problem:
+- improve GUI
+- develop Homepage
+- code refactoring
+- authentication security (sql injection..)
+- creation of an account
+- update an account
+- delete an account 
 
-#problem 1
+
+# NEWS AND UPDATRE
+
+
+# UPDATE 12/08
+
+now there is a backend, you can test it with npm start in backend folder
+and npm start in frontend folder.
+important! if you want that the application works you have to create a database and add credentials in .env file
+
+# UPDATE 13/08
+
+now is possible to login and if login go well, you can enter in the Homepage
+
+
+
+# STEP TO START:
+
+Step to emulate my database emulate my database:
+
+1. create a database with postgress
+2. create a table with these comand :
+
+SQL -> creation Database :
+
+CREATE TABLE utenti (id  integer PRIMARY KEY, username VARCHAR(20), pssowrd VARCHAR(15));
+
+3. populate the database with these script:
+
+INSERT INTO utenti(id, username, password)
+	VALUES (13, 'username', 'mypassword!');
+  
+4. now you can connect and read data from utenti database
+
+
+
+
+
+
+
+# Trouble/problem:
+
+# problem 1
 - i tried to use sequelize but, always an error "install pg manually"
 - try sequelize with mysql but same problem "install mysql2 manually"
 So now i restarted the project.
@@ -44,52 +92,3 @@ Project/link for ideas for my app/test and tutorial:
 - https://www.bezkoder.com/react-node-express-postgresql/
 - https://blog.logrocket.com/getting-started-with-postgres-in-your-react-app/
 - https://dev.to/andrewbaisden/creating-react-node-apps-that-connect-to-postgresql-and-harperdb-41h3
-
-
-Already DONE?
-
-- Passing userName and password to check component
-- Creation of the Backend
-
-# NEWS AND UPDATRE
-
-
-# UPDATE 12/08
-
-now there is a backend, you can test it with npm start in backend folder
-and npm start in frontend folder.
-important! if you want that the application works you have to create a database and add credentials in .env file
-
-# UPDATE 13/08
-
-now is possible to login and if login go well, you can enter in the Homepage
-
-
-
-# STEP TO START:
-
-Step to emulate my database emulate my database:
-
-1. create a database with postgress
-2. create a table with these comand :
-
-SQL -> creation Database :
-
-CREATE TABLE utenti (id  integer PRIMARY KEY, username VARCHAR(20), pssowrd VARCHAR(15));
-
-3. populate the database with these script:
-
-INSERT INTO utenti(id, username, password)
-	VALUES (13, 'username', 'mypassword!');
-  
-4. now you can connect and read data from utenti database
-
-# ROADMAP
-
-- improve GUI
-- develop Homepage
-- code refactoring
-- authentication security (sql injection..)
-- creation of an account
-- update an account
-- delete an account 
