@@ -4,6 +4,7 @@ Make crud operation, and at the end connect to a database.
 
 Trouble/problem:
 
+#problem 1
 - i tried to use sequelize but, always an error "install pg manually"
 - try sequelize with mysql but same problem "install mysql2 manually"
 So now i restarted the project.
@@ -15,6 +16,10 @@ react-dom.development.js:14906 Uncaught Error: Invalid hook call. Hooks can only
 3. You might have more than one copy of React in the same app
 
 the problem probably is reguarding Event.handler : https://it.reactjs.org/warnings/invalid-hook-call-warning.html.. TODO FIX
+
+bypass Problem 1:
+
+to bypass problem 1, i fetch data directly in App.js and pass the data to new file ShowAllUserv2.
 
 steps TODO:
 
