@@ -15,6 +15,15 @@ react-dom.development.js:14906 Uncaught Error: Invalid hook call. Hooks can only
 2. You might be breaking the Rules of Hooks
 3. You might have more than one copy of React in the same app
 
+# problem 2
+
+After the creation of login i want to redirect the user to another page, after the login is ok.
+but with the tag <Redirect to="/..."/> i have some problems... (i already creating a routing but idont know why dont work)
+maybe is better to use redux?
+
+
+
+
 the problem probably is reguarding Event.handler : https://it.reactjs.org/warnings/invalid-hook-call-warning.html.. TODO FIX
 
 bypass Problem 1:
