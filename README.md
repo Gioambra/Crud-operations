@@ -14,6 +14,11 @@ react-dom.development.js:14906 Uncaught Error: Invalid hook call. Hooks can only
 1. You might have mismatching versions of React and the renderer (such as React DOM)
 2. You might be breaking the Rules of Hooks
 3. You might have more than one copy of React in the same app
+the problem probably is reguarding Event.handler : https://it.reactjs.org/warnings/invalid-hook-call-warning.html.. TODO FIX
+# bypass Problem 1:
+
+to bypass problem 1, i fetch data directly in App.js and pass the data to new file ShowAllUserv2.	
+
 
 # problem 2
 
@@ -21,14 +26,12 @@ After the creation of login i want to redirect the user to another page, after t
 but with the tag <Redirect to="/..."/> i have some problems... (i already creating a routing but idont know why dont work)
 maybe is better to use redux?
 
+# resolved problem 2
+
+to fix problem 2 i decide not to use  the tag "Redirect" but i used useHistory that is a Hooks.
+You can find more info about this hooks here: https://reactrouter.com/web/api/Hooks
 
 
-
-the problem probably is reguarding Event.handler : https://it.reactjs.org/warnings/invalid-hook-call-warning.html.. TODO FIX
-
-bypass Problem 1:
-
-to bypass problem 1, i fetch data directly in App.js and pass the data to new file ShowAllUserv2.
 
 steps TODO:
 
@@ -43,19 +46,27 @@ Project/link for ideas for my app/test and tutorial:
 - https://dev.to/andrewbaisden/creating-react-node-apps-that-connect-to-postgresql-and-harperdb-41h3
 
 
-Aready DONE?
+Already DONE?
 
 - Passing userName and password to check component
 - Creation of the Backend
 
+# NEWS AND UPDATRE
 
-#UPDATE 12/08
+
+# UPDATE 12/08
 
 now there is a backend, you can test it with npm start in backend folder
 and npm start in frontend folder.
 important! if you want that the application works you have to create a database and add credentials in .env file
 
+# UPDATE 13/08
 
+now is possible to login and if login go well, you can enter in the Homepage
+
+
+
+# STEP TO START:
 
 Step to emulate my database emulate my database:
 
@@ -73,3 +84,12 @@ INSERT INTO utenti(id, username, password)
   
 4. now you can connect and read data from utenti database
 
+# ROADMAP
+
+- improve GUI
+- develop Homepage
+- code refactoring
+- authentication security (sql injection..)
+- creation of an account
+- update an account
+- delete an account 
