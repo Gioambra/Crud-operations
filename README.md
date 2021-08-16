@@ -3,11 +3,11 @@
 # ROADMAP
 
 - improve GUI
-- develop Homepage
+- develop Homepage 
 - code refactoring
 - authentication security (sql injection..)
-- creation of an account
-- update an account
+- creation of an account X
+- update an account 
 - delete an account 
 
 
@@ -60,7 +60,7 @@ react-dom.development.js:14906 Uncaught Error: Invalid hook call. Hooks can only
 2. You might be breaking the Rules of Hooks
 3. You might have more than one copy of React in the same app
 the problem probably is reguarding Event.handler : https://it.reactjs.org/warnings/invalid-hook-call-warning.html.. TODO FIX
-# bypass Problem 1:
+# bypass
 
 to bypass problem 1, i fetch data directly in App.js and pass the data to new file ShowAllUserv2.	
 
@@ -71,7 +71,7 @@ After the creation of login i want to redirect the user to another page, after t
 but with the tag <Redirect to="/..."/> i have some problems... (i already creating a routing but idont know why dont work)
 maybe is better to use redux?
 
-# resolved problem 2
+# resolved
 
 to fix problem 2 i decide not to use  the tag "Redirect" but i used useHistory that is a Hooks.
 You can find more info about this hooks here: https://reactrouter.com/web/api/Hooks
