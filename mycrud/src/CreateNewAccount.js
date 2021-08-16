@@ -5,7 +5,8 @@ import {
 	FormControl,
 	FormLabel,
 	Input,
-	Text
+	Text,
+	Box
 } from "@chakra-ui/react"
 import { useHistory } from 'react-router-dom'
 
@@ -14,6 +15,16 @@ export default function CreateNewAccount() {
 	var userName
 	let history = useHistory();
 	return (
+
+		<Box w="100%"
+			h="1000px"
+			bgGradient={[
+				"linear(to-tr, yellow.300,blue.400)",
+				"linear(to-t, blue.200, teal.500)",
+				"linear(to-b, green.100, blue.300)",
+			]}>
+
+
 		<Flex direction="column">
 			<Text fontSize="4xl">Create New Account</Text>
 			<Flex my="2rem">
@@ -25,14 +36,15 @@ export default function CreateNewAccount() {
 				</FormControl>
 			</Flex>
 			<Button onClick={() => Create(userName, password, history)}>Create</Button>
-		</Flex>
+			</Flex>
+		</Box>
 	)
 }
 
 function Create(username, password, history) {
 	console.log("Creazione account->>", username, password)
 
-	history.push("/Home")
+	history.pushState("/Home")
 	var randomId = Math.round(Math.random() * 900);
 	// Simple POST request with a JSON body using fetch
 	const requestOptions = {
