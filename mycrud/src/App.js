@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react"
 import { Switch, Route, useHistory } from 'react-router-dom'
 import Home from "./HomePage"
 import CreateNewAccount from './CreateNewAccount';
+import Update from './Update';
 
 // Routing of the application
 // TODO protect home page if no login, 2 default path "/"
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/Home" component={Home} />
       <Route path="/Login" component={Login} />
       <Route path="/Create" component={CreateNewAccount} />
+      <Route path="/Update" component={Update} />
     </Switch>)
 }
 
@@ -41,8 +43,8 @@ function Login() {
   console.log("APIDATA->", apiData)
 
   const CreateDefaultUrl = "/Create"
-  var password
-  var userName
+  var password = ""
+  var userName = ""
   let history = useHistory();
   return (
 
@@ -58,14 +60,11 @@ function Login() {
       <Button onClick={() => handleClick(history, userName, password, apiData)}>Submit</Button>
       <Button onClick={() => CreateNew(history, CreateDefaultUrl)}> Create an account</Button>
     </Flex>
-
-
   );
 }
 
 // if the login is correct, redirect to HomePage otherwise stay in Login Page
 function handleClick(history, userName, password, apiData) {
-
   // history can redirect or to "/Homepage" or stay in Login page
   history.push(ShowAllUserv2(userName, password, apiData));
 }

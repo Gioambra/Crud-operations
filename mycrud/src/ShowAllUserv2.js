@@ -1,8 +1,7 @@
-
+import HomePage from "./HomePage";
 function ShowAllUserv2(userName, password, apiData) {
 	console.log("Check->", userName, password)
 	console.log("ApiData->", apiData)
-
 	// By default is set on /Login route
 	var token = "/Login"
 	// Controls on inputs credentials

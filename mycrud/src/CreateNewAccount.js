@@ -7,12 +7,12 @@ import {
 	Input,
 	Text
 } from "@chakra-ui/react"
-
+import { useHistory } from 'react-router-dom'
 
 export default function CreateNewAccount() {
 	var password
 	var userName
-
+	let history = useHistory();
 	return (
 		<Flex direction="column">
 			<Text fontSize="4xl">Create New Account</Text>
@@ -24,15 +24,16 @@ export default function CreateNewAccount() {
 					<Input type="password" onChange={(event) => password = event.target.value} />
 				</FormControl>
 			</Flex>
-			<Button onClick={() => Create(userName, password)}>Create</Button>
+			<Button onClick={() => Create(userName, password, history)}>Create</Button>
 		</Flex>
 	)
 }
 
-function Create(username, password) {
+function Create(username, password, history) {
 	console.log("Creazione account->>", username, password)
 
-	var randomId = Math.round(Math.random() * 800);
+	history.push("/Home")
+	var randomId = Math.round(Math.random() * 900);
 	// Simple POST request with a JSON body using fetch
 	const requestOptions = {
 		method: 'POST',
