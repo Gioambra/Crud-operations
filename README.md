@@ -15,15 +15,14 @@
 
 now there is a backend, you can test it with npm start in backend folder
 and npm start in frontend folder.
-important! if you want that the application works you have to create a database and add credentials in .env file
+important! if you want that the application works you have to create a database and add credentials in your .env file
 
 # UPDATE 13/08
 
-now is possible to login and if login go well, you can enter in the Homepage
+now is possible to login and if  go well, you can enter in the Homepage
 
 
-
-# STEP TO START:
+# SETUP:
 
 Step to emulate my database emulate my database:
 
@@ -40,10 +39,6 @@ INSERT INTO utenti(id, username, password)
 	VALUES (13, 'username', 'mypassword!');
   
 4. now you can connect and read data from utenti database
-
-
-
-
 
 
 
@@ -75,7 +70,6 @@ maybe is better to use redux?
 
 to fix problem 2 i decide not to use  the tag "Redirect" but i used useHistory that is a Hooks.
 You can find more info about this hooks here: https://reactrouter.com/web/api/Hooks
-
 
 
 steps TODO:
