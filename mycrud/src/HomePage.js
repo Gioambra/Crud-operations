@@ -18,9 +18,11 @@ export default function HomePage() {
 				"linear(to-t, blue.200, teal.500)",
 				"linear(to-b, green.100, blue.300)",
 			]}>
+
+
 			<Text
 				position="center"
-				bgGradient="linear(to-l, #7928CA,#FF0080)"
+				bgGradient="linear(to-l, #7928CA,#AC0080)"
 				bgClip="text"
 				fontSize="6xl"
 				fontWeight="extrabold"
@@ -28,7 +30,10 @@ export default function HomePage() {
 				Welcome to the HomePage!
 			</Text>
 
-			<Button onClick={() => history.push("/Update")} >Update your account</Button>
+			<div>TODO TABLE</div>
+
+			<Button mt="600px" mr="800px" onClick={() => history.push("/Update")} >Update your account</Button>
+			<Button mt="600px" mr="800px" posonClick={() => history.push("/Login")} >Logout</Button>
 			<Text> you are now logged with</Text>
 		</Box>
 	)
