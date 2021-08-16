@@ -3,12 +3,14 @@
 # ROADMAP
 
 - improve GUI
-- develop Homepage 
+- develop Homepage, css and styles..
 - code refactoring
+- project refactorting (add folder and more order content)
 - authentication security (sql injection..)
 - creation of an account X
-- update an account 
-- delete an account 
+- update an account ?
+- delete an account  ?
+- Create a tale of TODO, the table will be always in contact with database CRUD operations
 
 
 # UPDATE 12/08
