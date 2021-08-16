@@ -11,6 +11,7 @@
 - update an account ?
 - delete an account  ?
 - Create a tale of TODO, the table will be always in contact with database CRUD operations
+- Add Logout button
 
 
 # UPDATE 12/08
