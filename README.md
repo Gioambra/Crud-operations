@@ -17,7 +17,7 @@ inside the home page we have the TODO table (with CRUD operations)
 - delete an account  ?
 - Create a tale of TODO, the table will be always in contact with database CRUD operations X
 - Add Logout button
-
+- https://developer.okta.com/blog/2020/12/16/react-login : Session? create a login session
 
 # UPDATE 12/08
 
