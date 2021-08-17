@@ -8,8 +8,10 @@ import {
 	Tr,
 	Th,
 	Td,
+	Flex,
 } from "@chakra-ui/react"
 
+import ModelToDo from "./Createtodo"
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 
@@ -34,7 +36,6 @@ export default function HomePage() {
 	console.log("TODO->>", apiData)
 
 	let history = useHistory();
-
 
 	return (
 
@@ -79,9 +80,11 @@ export default function HomePage() {
 				</Tbody>
 			</Table>
 
-			<Button mt="600px" mr="800px" onClick={() => history.push("/Update")} >Update your account</Button>
-			<Button mt="600px" mr="800px" onClick={() => history.push("/Login")} >Logout</Button>
-			<Text> you are now logged with</Text>
+			<Flex mt="350px" mr="800px">
+				<Button margin="0.6rem" onClick={() => history.push("/Update")} >Update your account</Button>
+				<Button margin="0.6rem" onClick={() => history.push("/Login")} >Logout</Button>
+				<ModelToDo ></ModelToDo>
+			</Flex>
 		</Box>
 	)
 }
