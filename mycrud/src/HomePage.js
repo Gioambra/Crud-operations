@@ -1,7 +1,13 @@
 import {
 	Button,
 	Text,
-	Box
+	Box,
+	Table,
+	Thead,
+	Tbody,
+	Tr,
+	Th,
+	Td,
 } from "@chakra-ui/react"
 
 import { useHistory } from 'react-router-dom'
@@ -31,6 +37,28 @@ export default function HomePage() {
 			</Text>
 
 			<div>TODO TABLE</div>
+			<Table variant="simple" border="4px">
+				<Thead>
+					<Tr>
+						<Th>1</Th>
+						<Th>2</Th>
+					</Tr>
+				</Thead>
+				<Tbody>
+					<Tr>
+						<Td>1a</Td>
+						<Td>2a</Td>
+					</Tr>
+					<Tr>
+						<Td>1b</Td>
+						<Td>2b</Td>
+					</Tr>
+					<Tr>
+						<Td>1c</Td>
+						<Td>2c</Td>
+					</Tr>
+				</Tbody>
+			</Table>
 
 			<Button mt="600px" mr="800px" onClick={() => history.push("/Update")} >Update your account</Button>
 			<Button mt="600px" mr="800px" posonClick={() => history.push("/Login")} >Logout</Button>
