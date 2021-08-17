@@ -66,6 +66,26 @@ app.get('/todo', (req, res) => {
 });
 
 
+// POST: Create movies and add them to the database
+app.post('/newTodo', (req, res) => {
+	const { ownerID, Content, TodoID, isdone } = req.body;
+	db.insert({
+		ownerID: ownerID,
+		Content: Content,
+		TodoID: TodoID,
+		isdone: isdone
+	})
+		.from('TODO')
+		.then(() => {
+			console.log('TODO Added');
+			return res.json({ msg: 'TODO Created' });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+});
+
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}, http://localhost:${port}`));

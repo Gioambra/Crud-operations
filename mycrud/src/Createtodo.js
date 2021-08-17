@@ -20,7 +20,7 @@ export default function ModelToDo() {
 
   const initialRef = React.useRef()
   const finalRef = React.useRef()
-
+  var Content = ""
   return (
     <>
       <Button margin="0.6rem" onClick={onOpen}>Open Modal</Button>
@@ -37,12 +37,12 @@ export default function ModelToDo() {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Content</FormLabel>
-              <Input ref={initialRef} placeholder="First name" />
+              <Input ref={initialRef} placeholder="ToDo" onChange={(event) => Content = event.target.value} />
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
+            <Button colorScheme="blue" mr={3} onClick={() => CreateToDo(Content)}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
@@ -51,4 +51,24 @@ export default function ModelToDo() {
       </Modal>
     </>
   )
+}
+
+function CreateToDo(Content) {
+  // add a control 
+
+  var randomId = Math.round(Math.random() * 900);
+  var randomeit2 = Math.round(Math.random() * 500);
+
+  const TodoInfo = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      ownerID: randomId,
+      Content: Content,
+      TodoID: randomeit2,
+      isdone: false
+    })
+  };
+  fetch('http://localhost:5000/newTodo', TodoInfo)
+    .then(response => response.json())
 }

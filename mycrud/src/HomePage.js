@@ -14,7 +14,7 @@ import {
 import ModelToDo from "./Createtodo"
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
-
+import { FcApproval, FcCancel } from "react-icons/fc";
 export default function HomePage() {
 
 	// Here we call API
@@ -67,12 +67,14 @@ export default function HomePage() {
 					</Tr>
 				</Thead>
 				<Tbody >
-
-					{apiData.map((item) => {
+					{
+						// here we need unique key for every row
+						apiData.map((item) => {
+							var randomId = Math.round(Math.random() * 900);
 						return (
-							<Tr fontSize="1.3rem" variant="simple" border="2px">
-								<Td>{item.Content}</Td>
-								<Td>{item.isDone}</Td>
+							<Tr key={randomId + 2} fontSize="1.3rem" variant="simple" border="2px">
+								<Td key={randomId + 1}>{item.Content}</Td>
+								<Td key={randomId + 3}>{item.isDone ? <FcApproval /> : <FcCancel />}</Td>
 							</Tr>
 						)
 					})}
