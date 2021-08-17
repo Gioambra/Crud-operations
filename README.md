@@ -3,14 +3,14 @@
 # ROADMAP
 
 - improve GUI
-- develop Homepage, css and styles..
+- develop Homepage, css and styles.. X
 - code refactoring
 - project refactorting (add folder and more order content)
 - authentication security (sql injection..)
 - creation of an account X
 - update an account ?
 - delete an account  ?
-- Create a tale of TODO, the table will be always in contact with database CRUD operations
+- Create a tale of TODO, the table will be always in contact with database CRUD operations X
 - Add Logout button
 
 
@@ -84,6 +84,10 @@ steps TODO:
 pass data from lohin component homepage to antoher component..
 Context? i tried but i had some problem.
 Project/link for ideas for my app/test and tutorial:
+
+# another problem
+
+actually im working with the upate of a TODO, and i have some problem with HTTP PUT request
 
 - https://www.taniarascia.com/crud-app-in-react-with-hooks/
 - https://www.bezkoder.com/react-node-express-postgresql/
