@@ -13,6 +13,7 @@ import {
   useDisclosure
 } from "@chakra-ui/react"
 
+
 import React from "react"
 
 export default function ModelToDo() {
@@ -23,7 +24,7 @@ export default function ModelToDo() {
   var Content = ""
   return (
     <>
-      <Button margin="0.6rem" onClick={onOpen}>Open Modal</Button>
+      <Button margin="0.6rem" onClick={onOpen}>Add new TODO</Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}

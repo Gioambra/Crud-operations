@@ -9,8 +9,10 @@ import {
 	Th,
 	Td,
 	Flex,
+	TableCaption
 } from "@chakra-ui/react"
 
+import UpdateContent from "./UpdateTodo"
 import ModelToDo from "./Createtodo"
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
@@ -60,6 +62,7 @@ export default function HomePage() {
 
 			<Text fontWeight="bold" position="center" >TODO TABLE</Text>
 			<Table border="4px">
+				<TableCaption>Update TODO click on it!</TableCaption>
 				<Thead variant="simple" border="2px">
 					<Tr>
 						<Th color="dark" fontWeight="extrabold" >TODO</Th>
@@ -73,8 +76,8 @@ export default function HomePage() {
 							var randomId = Math.round(Math.random() * 900);
 						return (
 							<Tr key={randomId + 2} fontSize="1.3rem" variant="simple" border="2px">
-								<Td key={randomId + 1}>{item.Content}</Td>
-								<Td key={randomId + 3}>{item.isDone ? <FcApproval /> : <FcCancel />}</Td>
+								<Td><UpdateContent item={item.Content}>Update Todo</UpdateContent></Td>
+								<Td key={randomId + 3}>{item.isdone ? <FcApproval /> : <FcCancel />}</Td>
 							</Tr>
 						)
 					})}
@@ -85,7 +88,7 @@ export default function HomePage() {
 			<Flex mt="350px" mr="800px">
 				<Button margin="0.6rem" onClick={() => history.push("/Update")} >Update your account</Button>
 				<Button margin="0.6rem" onClick={() => history.push("/Login")} >Logout</Button>
-				<ModelToDo ></ModelToDo>
+				<ModelToDo></ModelToDo>
 			</Flex>
 		</Box>
 	)

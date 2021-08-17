@@ -85,6 +85,22 @@ app.post('/newTodo', (req, res) => {
 		});
 });
 
+// PUT: Update Todo
+app.put('/updatetodo', (req, res) => {
+
+	const { Content, oldContent } = req.body
+	console.log(oldContent, Content)
+	db('TODO')
+		.where('Content', oldContent)
+		.update({ Content: Content })
+		.then(() => {
+			console.log('todo Updated');
+			return res.json({ msg: 'todo Updated' });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+});
 
 const port = process.env.PORT || 5000;
 
