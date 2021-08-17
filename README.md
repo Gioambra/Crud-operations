@@ -80,6 +80,9 @@ steps TODO:
 1. CRUD app (save as object not yet in database) example : https://github.com/taniarascia/react-hooks
 2. when all is ok, save the row in a database
 
+# problem 3
+pass data from lohin component homepage to antoher component..
+Context? i tried but i had some problem.
 Project/link for ideas for my app/test and tutorial:
 
 - https://www.taniarascia.com/crud-app-in-react-with-hooks/
