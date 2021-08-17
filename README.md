@@ -1,5 +1,10 @@
 # Crud-operations
+This is a test app, in this app i want to use CRUD operation, this is my goal.
 
+3 pages :
+-LOGIN PAGE path: localhost:<port>/Login (Page of Login)
+-HOME PAGE path: localhost:<port>/Home 
+inside the home page we have the TODO table (with CRUD operations)
 # ROADMAP
 
 - improve GUI
