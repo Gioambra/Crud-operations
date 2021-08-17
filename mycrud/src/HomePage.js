@@ -10,11 +10,32 @@ import {
 	Td,
 } from "@chakra-ui/react"
 
+import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 
 export default function HomePage() {
-	console.log("username from homepage->>")
+
+	// Here we call API
+	useEffect(() => {
+
+		const getApi = () => {
+			fetch('http://localhost:5000/todo')
+				.then(response => response.json())
+				.then((data) => {
+					console.log(data)
+					setApiData(data);
+				});
+		}
+
+		getApi()
+	}, []);
+
+	const [apiData, setApiData] = useState([]);
+	console.log("TODO->>", apiData)
+
 	let history = useHistory();
+
+
 	return (
 
 		<Box w="100%"
@@ -28,7 +49,7 @@ export default function HomePage() {
 
 			<Text
 				position="center"
-				bgGradient="linear(to-l, #7928CA,#AC0080)"
+				bgGradient="linear(to-l, black, blue)"
 				bgClip="text"
 				fontSize="6xl"
 				fontWeight="extrabold"
@@ -36,32 +57,30 @@ export default function HomePage() {
 				Welcome to the HomePage!
 			</Text>
 
-			<div>TODO TABLE</div>
-			<Table variant="simple" border="4px">
-				<Thead>
+			<Text fontWeight="bold" position="center" >TODO TABLE</Text>
+			<Table border="4px">
+				<Thead variant="simple" border="2px">
 					<Tr>
-						<Th>1</Th>
-						<Th>2</Th>
+						<Th color="dark" fontWeight="extrabold" >TODO</Th>
+						<Th color="dark" fontWeight="extrabold" >IS DONE?</Th>
 					</Tr>
 				</Thead>
-				<Tbody>
-					<Tr>
-						<Td>1a</Td>
-						<Td>2a</Td>
-					</Tr>
-					<Tr>
-						<Td>1b</Td>
-						<Td>2b</Td>
-					</Tr>
-					<Tr>
-						<Td>1c</Td>
-						<Td>2c</Td>
-					</Tr>
+				<Tbody >
+
+					{apiData.map((item) => {
+						return (
+							<Tr fontSize="1.3rem" variant="simple" border="2px">
+								<Td>{item.Content}</Td>
+								<Td>{item.isDone}</Td>
+							</Tr>
+						)
+					})}
+
 				</Tbody>
 			</Table>
 
 			<Button mt="600px" mr="800px" onClick={() => history.push("/Update")} >Update your account</Button>
-			<Button mt="600px" mr="800px" posonClick={() => history.push("/Login")} >Logout</Button>
+			<Button mt="600px" mr="800px" onClick={() => history.push("/Login")} >Logout</Button>
 			<Text> you are now logged with</Text>
 		</Box>
 	)

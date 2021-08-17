@@ -24,7 +24,6 @@ export default function CreateNewAccount() {
 				"linear(to-b, green.100, blue.300)",
 			]}>
 
-
 		<Flex direction="column">
 			<Text fontSize="4xl">Create New Account</Text>
 			<Flex my="2rem">

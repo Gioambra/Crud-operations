@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Flex, FormLabel, FormControl, Input, Button, Box, Text } from "@chakra-ui/react"
+import { Flex, FormLabel, FormControl, Input, Button, Box } from "@chakra-ui/react"
 //import Check from './check';
 //import ShowAllUser from "./ShowAllUser"
 import ShowAllUserv2 from "./ShowAllUserv2"
