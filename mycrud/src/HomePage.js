@@ -9,7 +9,8 @@ import {
 	Th,
 	Td,
 	Flex,
-	TableCaption
+	TableCaption,
+	flexbox
 } from "@chakra-ui/react"
 
 import UpdateContent from "./UpdateTodo"
@@ -42,16 +43,11 @@ export default function HomePage() {
 
 	return (
 
-		<Box w="100%"
-			h="1000px"
-			bgGradient={[
-				"linear(to-tr, yellow.300,blue.400)",
-				"linear(to-t, blue.200, teal.500)",
-				"linear(to-b, green.100, blue.300)",
-			]}>
 
 
+		<Flex direction="column">
 			<Text
+				textAlign={['right', 'center']}
 				position="center"
 				bgGradient="linear(to-l, black, blue)"
 				bgClip="text"
@@ -86,11 +82,11 @@ export default function HomePage() {
 				</Tbody>
 			</Table>
 
-			<Flex mt="350px" mr="800px">
+			<Flex mt="200px" mr="800px">
 				<Button margin="0.6rem" onClick={() => history.push("/Update")} >Update your account</Button>
 				<Button margin="0.6rem" onClick={() => history.push("/Login")} >Logout</Button>
 				<ModelToDo></ModelToDo>
 			</Flex>
-		</Box>
+		</Flex>
 	)
 }

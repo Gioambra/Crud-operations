@@ -1,4 +1,4 @@
-import { Flex, FormLabel, FormControl, Input, Button, Box } from "@chakra-ui/react"
+import { Flex, FormLabel, FormControl, Input, Button, Text, Box, Background } from "@chakra-ui/react"
 import ShowAllUserv2 from "./ShowAllUserv2"
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
@@ -28,28 +28,28 @@ function Login() {
 	var userName = ""
 	let history = useHistory();
 	return (
-
-		<Box w="100%"
-			h="1000px"
-			bgGradient={[
-				"linear(to-tr, yellow.300,blue.400)",
-				"linear(to-t, blue.200, teal.500)",
-				"linear(to-b, green.100, blue.300)",
-			]}>
-
-			<Flex direction="column" alignItems="center" justify-content="center" >
+		<Flex mt="320px" grow="100%" direction="column">
+			<Text
+				textAlign={['right', 'center']}
+				position="center"
+				bgGradient="linear(to-l, black, blue)"
+				bgClip="text"
+				fontSize="6xl"
+				fontWeight="extrabold"
+			>
+				Welcome to TODO tracking APP!
+			</Text>
 				<FormControl color="black" id="userName">
 					<FormLabel color="black" >Email address</FormLabel>
-					<Input color="black" type="username" id="user" onChange={(event) => userName = event.target.value} />
+				<Input variant="filled" color="black" type="username" id="user" onChange={(event) => userName = event.target.value} />
 				</FormControl>
 				<FormControl id="password">
 					<FormLabel color="black">password</FormLabel>
-					<Input color="black" type="password" id="psw" onChange={(event) => password = event.target.value} />
+				<Input variant="filled" color="black" type="password" id="psw" onChange={(event) => password = event.target.value} />
 				</FormControl>
-				<Button onClick={() => handleClick(history, userName, password, apiData)}>Submit</Button>
-				<Button onClick={() => CreateNew(history, CreateDefaultUrl)}> Create an account</Button>
-			</Flex>
-		</Box>
+			<Button mt="50px" colorScheme="blue" onClick={() => handleClick(history, userName, password, apiData)}>Submit</Button>
+			<Button colorScheme="blue" onClick={() => CreateNew(history, CreateDefaultUrl)}> Create an account</Button>
+		</Flex>
 	);
 }
 
