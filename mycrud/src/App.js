@@ -1,10 +1,9 @@
 import './App.css';
 
-import { Flex, FormLabel, FormControl, Input, Button, Box } from "@chakra-ui/react"
 //import Check from './check';
 //import ShowAllUser from "./ShowAllUser"
 
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Home from "./HomePage"
 import CreateNewAccount from './CreateNewAccount';
 import Update from './Update';
