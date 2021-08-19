@@ -17,7 +17,6 @@ import {
 import React from "react"
 
 function UpdateContent(item) {
-	console.log("updsadassadas", item.item)
 
 	const { isOpen, onOpen, onClose } = useDisclosure()
 

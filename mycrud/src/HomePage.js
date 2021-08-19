@@ -1,7 +1,6 @@
 import {
 	Button,
 	Text,
-	Box,
 	Table,
 	Thead,
 	Tbody,
@@ -10,7 +9,6 @@ import {
 	Td,
 	Flex,
 	TableCaption,
-	flexbox
 } from "@chakra-ui/react"
 
 import UpdateContent from "./UpdateTodo"
@@ -18,6 +16,7 @@ import ModelToDo from "./Createtodo"
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 import { FcApproval, FcCancel } from "react-icons/fc";
+import UpdateDone from "./UpdateDone"
 
 export default function HomePage() {
 
@@ -74,7 +73,7 @@ export default function HomePage() {
 						return (
 							<Tr key={randomId + 2} fontSize="1.3rem" variant="simple" border="2px">
 								<Td><UpdateContent item={item.Content}>Update Todo</UpdateContent></Td>
-								<Td key={randomId + 3}>{item.isdone ? <FcApproval /> : <FcCancel />}</Td>
+								<Td key={randomId + 3} >{item.isdone ? <FcApproval onClick={() => UpdateDone(item, true)} /> : <FcCancel onClick={() => UpdateDone(item, false)} />}</Td>
 							</Tr>
 						)
 					})}
@@ -84,7 +83,7 @@ export default function HomePage() {
 
 			<Flex mt="200px" mr="800px">
 				<Button margin="0.6rem" onClick={() => history.push("/Update")} >Update your account</Button>
-				<Button margin="0.6rem" onClick={() => history.push("/Login")} >Logout</Button>
+				<Button margin="0.6rem" >Logout</Button>
 				<ModelToDo></ModelToDo>
 			</Flex>
 		</Flex>

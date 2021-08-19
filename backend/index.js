@@ -102,6 +102,25 @@ app.put('/updatetodo', (req, res) => {
 		});
 });
 
+
+// PUT: Update Todo
+app.put('/Updateisdone', (req, res) => {
+	console.log("gogogogogog")
+	const { TodoID, newState } = req.body
+	console.log("td", TodoID, "ns", newState)
+	db('TODO')
+		.where('TodoID', TodoID)
+		.update({ isdone: newState })
+		.then(() => {
+			console.log('todo Updated');
+			return res.json({ msg: 'todo Updated' });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+});
+
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}, http://localhost:${port}`));
