@@ -19,7 +19,7 @@ import { FcApproval, FcCancel } from "react-icons/fc";
 import UpdateDone from "./UpdateDone"
 
 export default function HomePage() {
-
+	const [isdone, SetDone] = useState([]);
 	// Here we call API
 	useEffect(() => {
 
@@ -68,6 +68,7 @@ export default function HomePage() {
 				<Tbody >
 					{
 						// here we need unique key for every row
+						// unique function that handle isdonecolumn?
 						apiData.map((item) => {
 							var randomId = Math.round(Math.random() * 900);
 						return (
