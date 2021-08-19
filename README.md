@@ -7,17 +7,15 @@ This is a test app, in this app i want to use CRUD operation, this is my goal.
 inside the home page we have the TODO table (with CRUD operations)
 # ROADMAP
 
-- improve GUI
 - develop Homepage, css and styles.. X
 - code refactoring
 - project refactorting (add folder and more order content)
 - authentication security (sql injection..)
 - creation of an account X
-- update an account ?
-- delete an account  ?
 - Create a tale of TODO, the table will be always in contact with database CRUD operations X
 - Add Logout button
-- https://developer.okta.com/blog/2020/12/16/react-login : Session? create a login session
+- https://developer.okta.com/blog/2020/12/16/react-login : Session? create a login session also todosession
+- in the table TODO, change the icon onclick with fast refresh
 
 # UPDATE 12/08
 
@@ -50,9 +48,9 @@ INSERT INTO utenti(id, username, password)
 
 
 
-# Trouble/problem:
+# Trouble/issue:
 
-# problem 1
+# issue 1
 - i tried to use sequelize but, always an error "install pg manually"
 - try sequelize with mysql but same problem "install mysql2 manually"
 So now i restarted the project.
@@ -68,7 +66,7 @@ the problem probably is reguarding Event.handler : https://it.reactjs.org/warnin
 to bypass problem 1, i fetch data directly in App.js and pass the data to new file ShowAllUserv2.	
 
 
-# problem 2
+# issue 2
 
 After the creation of login i want to redirect the user to another page, after the login is ok.
 but with the tag <Redirect to="/..."/> i have some problems... (i already creating a routing but idont know why dont work)
