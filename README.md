@@ -1,3 +1,5 @@
+![Immagine](https://user-images.githubusercontent.com/87516748/130260353-451361c4-b9f6-44ed-9b72-9ee2519281c7.PNG)
+![Immagine2](https://user-images.githubusercontent.com/87516748/130260838-1b0f0f7a-bb2d-4f27-8ca0-4c774d130340.png)
 
 # Crud-operations :large_orange_diamond:
 This is a test app, in this app i want to use CRUD operation, this is my goal.
@@ -109,3 +111,8 @@ actually im working with the upate of a TODO, and i have some problem with HTTP 
 - https://www.bezkoder.com/react-node-express-postgresql/
 - https://blog.logrocket.com/getting-started-with-postgres-in-your-react-app/
 - https://dev.to/andrewbaisden/creating-react-node-apps-that-connect-to-postgresql-and-harperdb-41h3
+	
+	
+in the 2 screnshot:
+- login page
+- cookie handling on dev tools
