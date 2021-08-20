@@ -5,13 +5,15 @@ export default function UpdateDone(item, currentState) {
 
 	if (currentState) {
 		UpdateIsDone(item.TodoID, false)
+		var randomId1 = Math.round(Math.random() * 900);
 		// we are changing the value of the TODO in false(NO DONE)
-		return (<FcCancel></FcCancel>)
+		return (randomId1)
 	}
 	else {
 		// we are changin the TODO in true (IS DONE)
 		UpdateIsDone(item.TodoID, true)
-		return (<FcApproval></FcApproval>)
+		var randomId2 = Math.round(Math.random() * 900);
+		return (randomId2)
 	}
 
 }

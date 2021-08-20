@@ -19,10 +19,12 @@ import { FcApproval, FcCancel } from "react-icons/fc";
 import UpdateDone from "./UpdateDone"
 
 export default function HomePage() {
-	const [isdone, SetDone] = useState([]);
+
+	const [change, setChanges] = useState([]);
+	const [apiData, setApiData] = useState([]);
 	// Here we call API
 	useEffect(() => {
-
+		console.log("effect")
 		const getApi = () => {
 			fetch('http://localhost:5000/todo')
 				.then(response => response.json())
@@ -31,19 +33,11 @@ export default function HomePage() {
 					setApiData(data);
 				});
 		}
-
 		getApi()
-	}, []);
-
-	const [apiData, setApiData] = useState([]);
-	console.log("TODO->>", apiData)
+	}, [change]);
 
 	let history = useHistory();
-
 	return (
-
-
-
 		<Flex direction="column">
 			<Text
 				textAlign={['right', 'center']}
@@ -67,14 +61,16 @@ export default function HomePage() {
 				</Thead>
 				<Tbody >
 					{
+
 						// here we need unique key for every row
 						// unique function that handle isdonecolumn?
 						apiData.map((item) => {
+
 							var randomId = Math.round(Math.random() * 900);
 						return (
 							<Tr key={randomId + 2} fontSize="1.3rem" variant="simple" border="2px">
 								<Td><UpdateContent item={item.Content}>Update Todo</UpdateContent></Td>
-								<Td key={randomId + 3} >{item.isdone ? <FcApproval onClick={() => UpdateDone(item, true)} /> : <FcCancel onClick={() => UpdateDone(item, false)} />}</Td>
+								<Td key={randomId + 3} >{item.isdone ? <FcApproval onClick={() => setChanges(UpdateDone(item, true))} /> : <FcCancel onClick={() => setChanges(UpdateDone(item, false))} />}</Td>
 							</Tr>
 						)
 					})}
@@ -85,6 +81,7 @@ export default function HomePage() {
 			<Flex mt="200px" mr="800px">
 				<Button margin="0.6rem" onClick={() => history.push("/Update")} >Update your account</Button>
 				<Button margin="0.6rem" >Logout</Button>
+				<Button margin="0.6rem" onClick={(randomId) => setChanges(randomId)}>REFETCH</Button>
 				<ModelToDo></ModelToDo>
 			</Flex>
 		</Flex>

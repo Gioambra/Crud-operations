@@ -63,5 +63,4 @@ function CreateNew(history, CreateDefaultUrl) {
 	history.push(CreateDefaultUrl);
 }
 
-
 export default Login;
