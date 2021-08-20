@@ -10,7 +10,7 @@ import {
 	Flex,
 	TableCaption,
 } from "@chakra-ui/react"
-
+import { useCookies } from "react-cookie";
 import { v4 as uuidv4 } from 'uuid';
 import UpdateContent from "./UpdateTodo"
 import ModelToDo from "./Createtodo"
@@ -20,7 +20,7 @@ import { FcApproval, FcCancel } from "react-icons/fc";
 import UpdateDone from "./UpdateDone"
 
 export default function HomePage() {
-
+	const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 	const [change, setChanges] = useState([]);
 	const [apiData, setApiData] = useState([]);
 	// Here we call API
@@ -78,10 +78,18 @@ export default function HomePage() {
 
 			<Flex mt="200px" mr="800px">
 				<Button margin="0.6rem" onClick={() => history.push("/Update")} >Update your account</Button>
-				<Button margin="0.6rem" >Logout</Button>
+				<Button margin="0.6rem" onClick={() => Logout(history, removeCookie)} >Logout</Button>
 				<Button margin="0.6rem" onClick={(randomId) => setChanges(randomId)}>REFETCH</Button>
 				<ModelToDo></ModelToDo>
 			</Flex>
 		</Flex>
 	)
+}
+
+
+function Logout(history, removeCookie) {
+	removeCookie("user")
+	removeCookie("auth-token")
+	removeCookie("password")
+	history.push("/Login")
 }

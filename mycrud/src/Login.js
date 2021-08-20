@@ -2,8 +2,11 @@ import { Flex, FormLabel, FormControl, Input, Button, Text } from "@chakra-ui/re
 import ShowAllUserv2 from "./ShowAllUserv2"
 import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
-
+import { useCookies } from "react-cookie";
+import { v4 as uuidv4 } from 'uuid';
+import ControlAuth from "./Login"
 function Login() {
+	const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
 	// Here we call API
 	useEffect(() => {
@@ -47,14 +50,23 @@ function Login() {
 					<FormLabel color="black">password</FormLabel>
 				<Input variant="filled" color="black" type="password" id="psw" onChange={(event) => password = event.target.value} />
 				</FormControl>
-			<Button mt="50px" colorScheme="blue" onClick={() => handleClick(history, userName, password, apiData)}>Submit</Button>
+			<Button mt="50px" colorScheme="blue" onClick={() => handleClick(history, userName, password, apiData, setCookie)}>Submit</Button>
 			<Button colorScheme="blue" onClick={() => CreateNew(history, CreateDefaultUrl)}> Create an account</Button>
 		</Flex>
 	);
 }
 
 // if the login is correct, redirect to HomePage otherwise stay in Login Page
-function handleClick(history, userName, password, apiData) {
+function handleClick(history, userName, password, apiData, setCookie) {
+
+	if (ShowAllUserv2(userName, password, apiData) === "/Home") {
+		setCookie("user", userName, { path: '/' });
+		setCookie("password", password, { path: '/' });
+		let sessionToken = uuidv4()
+		setCookie("auth-token", sessionToken, { path: '/' })
+
+		// TODO create a function that check in every page if auth information are correct
+	}
 	// history can redirect or to "/Homepage" or stay in Login page
 	history.push(ShowAllUserv2(userName, password, apiData));
 }
