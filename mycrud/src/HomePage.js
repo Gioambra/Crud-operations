@@ -22,8 +22,9 @@ import FetchAllUser from "./fetchData/AllUsers"
 
 export default function HomePage(sessionToken) {
 	const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+	let history = useHistory();
 
-	function CheckCookie(cookies, sessionToken) {
+	function CheckCookie(cookies, history) {
 		var users = FetchAllUser();
 		users.forEach(user => {
 			if (cookies.user === user.username) {
@@ -31,10 +32,12 @@ export default function HomePage(sessionToken) {
 					console.log("credentials cookie are ok")
 				}
 			}
+			console.log("noT auth")
+			history.push("/Login")
 		});
 	}
 
-	CheckCookie(cookies)
+	CheckCookie(cookies, history)
 	const [change, setChanges] = useState([]);
 	const [apiData, setApiData] = useState([]);
 	// Here we call API
@@ -51,7 +54,6 @@ export default function HomePage(sessionToken) {
 		getApi()
 	}, [change]);
 
-	let history = useHistory();
 	return (
 		<Flex direction="column">
 			<Text
