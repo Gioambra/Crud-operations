@@ -57,7 +57,6 @@ export default function HomePage() {
 					<Tr>
 						<Th color="dark" fontWeight="extrabold" >TODO</Th>
 						<Th color="dark" fontWeight="extrabold" >IS DONE?</Th>
-						<Th>number</Th>
 					</Tr>
 				</Thead>
 				<Tbody >
@@ -70,7 +69,6 @@ export default function HomePage() {
 							<Tr key={randomId + 2} fontSize="1.3rem" variant="simple" border="2px">
 								<Td><UpdateContent item={item.Content}>Update Todo</UpdateContent></Td>
 								<Td key={randomId + 3} >{item.isdone ? <FcApproval onClick={() => setChanges(UpdateDone(item, true))} /> : <FcCancel onClick={() => setChanges(UpdateDone(item, false))} />}</Td>
-								<Td>{randomId + 3}</Td>
 							</Tr>
 						)
 					})}
