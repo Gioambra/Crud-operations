@@ -1,4 +1,3 @@
-import { FcApproval, FcCancel } from "react-icons/fc";
 
 export default function UpdateDone(item, currentState) {
 	console.log("upd-<<", item)
