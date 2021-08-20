@@ -1,4 +1,4 @@
-![Immagine](https://user-images.githubusercontent.com/87516748/130101508-3e4b4e9c-5761-471e-8b1a-967aa53129f2.png)
+
 # Crud-operations
 This is a test app, in this app i want to use CRUD operation, this is my goal.
 
@@ -15,7 +15,6 @@ inside the home page we have the TODO table (with CRUD operations)
 - creation of an account X
 - Create a tale of TODO, the table will be always in contact with database CRUD operations X
 - Add Logout button
-- https://developer.okta.com/blog/2020/12/16/react-login : Session? create a login session also todosession
 - in the table TODO, change the icon onclick with fast refresh
 
 # UPDATE 12/08
@@ -27,6 +26,10 @@ important! if you want that the application works you have to create a database 
 # UPDATE 13/08
 
 now is possible to login and if  go well, you can enter in the Homepage
+
+	
+# UPDATE 13/08
+
 
 
 # SETUP:
@@ -84,11 +87,15 @@ steps TODO:
 1. CRUD app (save as object not yet in database) example : https://github.com/taniarascia/react-hooks
 2. when all is ok, save the row in a database
 
-# problem 3
+# issue 3
 pass data from lohin component homepage to antoher component..
 Context? i tried but i had some problem.
 Project/link for ideas for my app/test and tutorial:
 
+# issue 4
+in the TODO table a refetch happen when we click on the column 'isDone?'.
+i use not a besdt pratcise to update that column.
+TODO-> understand and find a best practise to update 
 # another problem
 
 actually im working with the upate of a TODO, and i have some problem with HTTP PUT request
