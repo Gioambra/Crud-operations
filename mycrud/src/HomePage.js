@@ -81,13 +81,13 @@ export default function HomePage(sessionToken) {
 						// here we need unique key for every row
 						// unique function that handle isdonecolumn?
 						apiData.map((item, counter) => {
-						return (
-							<Tr key={uuidv4()} fontSize="1.3rem" variant="simple" border="2px">
-								<Td><UpdateContent item={item.Content}>Update Todo</UpdateContent></Td>
-								<Td key={uuidv4()} >{item.isdone ? <FcApproval onClick={() => setChanges(UpdateDone(item, true))} /> : <FcCancel onClick={() => setChanges(UpdateDone(item, false))} />}</Td>
-							</Tr>
-						)
-					})}
+							return (
+								<Tr key={uuidv4()} fontSize="1.3rem" variant="simple" border="2px">
+									<Td><UpdateContent item={item.Content}>Update Todo</UpdateContent></Td>
+									<Td key={uuidv4()} >{item.isdone ? <FcApproval onClick={() => setChanges(UpdateDone(item, true))} /> : <FcCancel onClick={() => setChanges(UpdateDone(item, false))} />}</Td>
+								</Tr>
+							)
+						})}
 
 				</Tbody>
 			</Table>
