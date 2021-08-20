@@ -18,9 +18,23 @@ import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 import { FcApproval, FcCancel } from "react-icons/fc";
 import UpdateDone from "./UpdateDone"
+import FetchAllUser from "./fetchData/AllUsers"
 
-export default function HomePage() {
+export default function HomePage(sessionToken) {
 	const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+
+	function CheckCookie(cookies, sessionToken) {
+		var users = FetchAllUser();
+		users.forEach(user => {
+			if (cookies.user === user.username) {
+				if (cookies.password === user.password) {
+					console.log("credentials cookie are ok")
+				}
+			}
+		});
+	}
+
+	CheckCookie(cookies)
 	const [change, setChanges] = useState([]);
 	const [apiData, setApiData] = useState([]);
 	// Here we call API
@@ -48,7 +62,7 @@ export default function HomePage() {
 				fontSize="6xl"
 				fontWeight="extrabold"
 			>
-				Welcome to the HomePage!
+				Welcome to the HomePage! {cookies.user}
 			</Text>
 
 			<Text fontWeight="bold" position="center" >TODO TABLE</Text>
@@ -89,7 +103,7 @@ export default function HomePage() {
 
 function Logout(history, removeCookie) {
 	removeCookie("user")
-	removeCookie("auth-token")
+	removeCookie("authToken")
 	removeCookie("password")
 	history.push("/Login")
 }

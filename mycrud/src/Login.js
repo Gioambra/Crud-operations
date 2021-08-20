@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 import { useCookies } from "react-cookie";
 import { v4 as uuidv4 } from 'uuid';
-import ControlAuth from "./Login"
 function Login() {
 	const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+
 
 	// Here we call API
 	useEffect(() => {
@@ -60,10 +60,11 @@ function Login() {
 function handleClick(history, userName, password, apiData, setCookie) {
 
 	if (ShowAllUserv2(userName, password, apiData) === "/Home") {
+
+		console.log("here we are man")
 		setCookie("user", userName, { path: '/' });
 		setCookie("password", password, { path: '/' });
-		let sessionToken = uuidv4()
-		setCookie("auth-token", sessionToken, { path: '/' })
+		setCookie("authToken", uuidv4(), { path: '/' })
 
 		// TODO create a function that check in every page if auth information are correct
 	}
