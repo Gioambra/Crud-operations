@@ -26,14 +26,18 @@ export default function HomePage(sessionToken) {
 
 	function CheckCookie(cookies, history) {
 		var users = FetchAllUser();
+		var counter = 0
 		users.forEach(user => {
 			if (cookies.user === user.username) {
 				if (cookies.password === user.password) {
 					console.log("credentials cookie are ok")
+					counter++;
 				}
 			}
-			console.log("noT auth")
-			history.push("/Login")
+			if (counter == 0) {
+				console.log("not auth")
+				history.push("/Login")
+			}
 		});
 	}
 
