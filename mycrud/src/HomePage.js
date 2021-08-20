@@ -11,6 +11,7 @@ import {
 	TableCaption,
 } from "@chakra-ui/react"
 
+import { v4 as uuidv4 } from 'uuid';
 import UpdateContent from "./UpdateTodo"
 import ModelToDo from "./Createtodo"
 import React, { useEffect, useState } from "react"
@@ -64,11 +65,10 @@ export default function HomePage() {
 						// here we need unique key for every row
 						// unique function that handle isdonecolumn?
 						apiData.map((item, counter) => {
-							var randomId = Math.round(Math.random() * 2000);
 						return (
-							<Tr key={randomId + 2} fontSize="1.3rem" variant="simple" border="2px">
+							<Tr key={uuidv4()} fontSize="1.3rem" variant="simple" border="2px">
 								<Td><UpdateContent item={item.Content}>Update Todo</UpdateContent></Td>
-								<Td key={randomId + 3} >{item.isdone ? <FcApproval onClick={() => setChanges(UpdateDone(item, true))} /> : <FcCancel onClick={() => setChanges(UpdateDone(item, false))} />}</Td>
+								<Td key={uuidv4()} >{item.isdone ? <FcApproval onClick={() => setChanges(UpdateDone(item, true))} /> : <FcCancel onClick={() => setChanges(UpdateDone(item, false))} />}</Td>
 							</Tr>
 						)
 					})}
