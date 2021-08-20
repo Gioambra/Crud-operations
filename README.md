@@ -96,6 +96,10 @@ Project/link for ideas for my app/test and tutorial:
 in the TODO table a refetch happen when we click on the column 'isDone?'.
 i use not a besdt pratcise to update that column.
 TODO-> understand and find a best practise to update 
+	
+#issue 5
+use effect infinite loop.
+the page work well, but the server is in a infinite loop
 # another problem
 
 actually im working with the upate of a TODO, and i have some problem with HTTP PUT request
