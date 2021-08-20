@@ -1,12 +1,13 @@
 
-# Crud-operations
+# Crud-operations :large_orange_diamond:
 This is a test app, in this app i want to use CRUD operation, this is my goal.
 
 3 pages :
 -LOGIN PAGE path: localhost:<port>/Login (Page of Login)
 -HOME PAGE path: localhost:<port>/Home 
 inside the home page we have the TODO table (with CRUD operations)
-# ROADMAP
+
+# ROADMAP :green_circle:
 
 - develop Homepage, css and styles.. X
 - code refactoring
@@ -98,7 +99,7 @@ i use not a besdt pratcise to update that column.
 TODO-> understand and find a best practise to update 
 	
 #issue 5
-use effect infinite loop.
+use effect infinite loop. :ghost:
 the page work well, but the server is in a infinite loop
 # another problem
 
